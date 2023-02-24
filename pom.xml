@@ -54,4 +54,13 @@
             <url>https://maven.aliyun.com/repository/public</url>
         </pluginRepository>
     </pluginRepositories>
+
+    <distributionManagement>
+        <!-- 制品包提交到github -->
+        <repository>
+            <id>github</id>
+            <name>GitHub haiwang2517 Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/haiwang2517/maven-repo-hspace</url>
+        </repository>
+    </distributionManagement>
 </project>
