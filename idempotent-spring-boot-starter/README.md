@@ -1,5 +1,7 @@
 ## 幂等性
 
+> 基于redis-spring-boot-stater
+
 采用Redis Token 实现幂等性.
 
 ![流程](http://blog.haiyinlong.cn/images/java/redisToken.png)
