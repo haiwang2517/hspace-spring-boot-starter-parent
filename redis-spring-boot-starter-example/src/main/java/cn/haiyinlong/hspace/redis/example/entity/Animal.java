@@ -1,4 +1,4 @@
-package cn.haiyinlong.hspace.idempotent.example.entity;
+package cn.haiyinlong.hspace.redis.example.entity;
 
 import lombok.Data;
 

@@ -1,6 +1,6 @@
-package cn.haiyinlong.hspace.idempotent.example;
+package cn.haiyinlong.hspace.redis.example;
 
-import cn.haiyinlong.hspace.idempotent.example.entity.User;
+import cn.haiyinlong.hspace.redis.example.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

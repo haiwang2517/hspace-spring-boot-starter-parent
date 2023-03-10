@@ -13,9 +13,9 @@ spring:
       datasource:
         base:
           username: root
-          password: ScudP@wer
+          password: xxxx
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://nj-cdb-jq7pe3t9.sql.tencentcdb.com:63864/proposal_test?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
+          url: xxxx
 
 mybatis-plus:
   # ??mapper????

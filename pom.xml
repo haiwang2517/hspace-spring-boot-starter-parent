@@ -21,17 +21,23 @@
     <modules>
         <module>idempotent-spring-boot-starter</module>
         <module>redis-spring-boot-starter</module>
+        <module>mysql-spring-boot-starter</module>
     </modules>
 
     <properties>
         <!-- 2. 统一当前依赖版本,子模块使用这个版本  -->
         <hspace.starter.version>0.0.1-SNAPSHOT</hspace.starter.version>
+        <!-- 系统配置  -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <java.version>1.8</java.version>
+        <!-- 子工程版本 -->
         <spring-boot.version>2.7.8</spring-boot.version>
         <redisson.version>3.18.0</redisson.version>
+        <mybatis-plus.version>3.5.2</mybatis-plus.version>
+        <mysql.connector.version>8.0.31</mysql.connector.version>
+        <dynamic.datasource.version>2.5.7</dynamic.datasource.version>
     </properties>
 
     <dependencies>
