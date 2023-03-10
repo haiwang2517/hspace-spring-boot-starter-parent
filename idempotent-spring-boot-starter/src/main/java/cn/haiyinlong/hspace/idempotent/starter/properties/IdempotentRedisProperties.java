@@ -6,7 +6,7 @@ import org.springframework.util.ObjectUtils;
 
 @Data
 @ConfigurationProperties(prefix = "hspace.idempotent.token")
-public class RedisProperties {
+public class IdempotentRedisProperties {
 
   /** idempotent token key 命名规范 */
   private String key;
