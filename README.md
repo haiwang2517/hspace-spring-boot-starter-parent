@@ -10,5 +10,6 @@ __代码使用的版本和环境:__
 
 __已完成starter:__
 
+* [redis-spring-boot-starter (提供Redis统一序列化Starter)](./redis-spring-boot-starter/README.md)
 * [idempotent-spring-boot-starter (采用Redis+Token实现幂等性)](./idempotent-spring-boot-starter/README.md)
 
