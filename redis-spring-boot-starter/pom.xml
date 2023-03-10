@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -10,7 +10,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>idempotent-spring-boot-starter</artifactId>
+    <artifactId>redis-spring-boot-starter</artifactId>
+
+    <name>redis-spring-boot-starter</name>
 
     <dependencies>
         <dependency>
@@ -26,15 +28,9 @@
 
         <!-- redis 依赖 -->
         <dependency>
-            <groupId>cn.haiyinlong.hspace</groupId>
-            <artifactId>redis-spring-boot-starter</artifactId>
-            <version>${hspace.starter.version}</version>
-        </dependency>
-
-        <!-- aop 依赖 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson-spring-boot-starter</artifactId>
+            <version>${redisson.version}</version>
         </dependency>
     </dependencies>
 

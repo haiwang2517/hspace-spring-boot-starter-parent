@@ -2,51 +2,58 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>cn.haiyinlong.hspace</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <packaging>pom</packaging>
-    <!-- 1. 当前版本  -->
-    <version>0.0.1-SNAPSHOT</version>
-    <name>hspace-spring-boot-starter-parent</name>
-    <description>hspace-spring-boot-starter-parent</description>
-    <url>https://github.com/haiwang2517</url>
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.7.8</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-
-    <modules>
-        <module>idempotent-spring-boot-starter</module>
-        <module>redis-spring-boot-starter</module>
-    </modules>
-
+    <groupId>cn.haiyinlong.hspace</groupId>
+    <artifactId>redis-spring-boot-starter-example</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>redis-spring-boot-starter-example</name>
+    <description>redis-spring-boot-starter-example</description>
     <properties>
-        <!-- 2. 统一当前依赖版本,子模块使用这个版本  -->
-        <hspace.starter.version>0.0.1-SNAPSHOT</hspace.starter.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
         <java.version>1.8</java.version>
-        <spring-boot.version>2.7.8</spring-boot.version>
-        <redisson.version>3.18.0</redisson.version>
     </properties>
-
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>cn.haiyinlong.hspace</groupId>
+            <artifactId>redis-spring-boot-starter</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <repositories>
         <repository>
@@ -62,12 +69,4 @@
         </pluginRepository>
     </pluginRepositories>
 
-    <distributionManagement>
-        <!-- 制品包提交到github -->
-        <repository>
-            <id>github</id>
-            <name>GitHub haiwang2517 Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/haiwang2517/maven-repo-hspace</url>
-        </repository>
-    </distributionManagement>
 </project>
