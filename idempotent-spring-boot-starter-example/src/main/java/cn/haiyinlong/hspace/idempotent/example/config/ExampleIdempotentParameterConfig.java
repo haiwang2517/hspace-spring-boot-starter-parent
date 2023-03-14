@@ -1,6 +1,6 @@
 package cn.haiyinlong.hspace.idempotent.example.config;
 
-import cn.haiyinlong.hspace.idempotent.starter.IdempotentParameterConfig;
+import cn.haiyinlong.hspace.idempotent.IdempotentParameterConfig;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;

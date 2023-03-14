@@ -1,4 +1,4 @@
-package cn.haiyinlong.hspace.idempotent.starter.properties;
+package cn.haiyinlong.hspace.idempotent.properties;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

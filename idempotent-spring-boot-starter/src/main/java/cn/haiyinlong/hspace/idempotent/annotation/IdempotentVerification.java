@@ -1,4 +1,4 @@
-package cn.haiyinlong.hspace.idempotent.starter.annotation;
+package cn.haiyinlong.hspace.idempotent.annotation;
 
 import java.lang.annotation.*;
 

@@ -1,9 +1,9 @@
-package cn.haiyinlong.hspace.idempotent.starter;
+package cn.haiyinlong.hspace.idempotent;
 
-import cn.haiyinlong.hspace.idempotent.starter.aop.IdempotentAop;
-import cn.haiyinlong.hspace.idempotent.starter.exception.IdempotentException;
-import cn.haiyinlong.hspace.idempotent.starter.properties.IdempotentRedisProperties;
-import cn.haiyinlong.hspace.idempotent.starter.service.IdempotentService;
+import cn.haiyinlong.hspace.idempotent.aop.IdempotentAop;
+import cn.haiyinlong.hspace.idempotent.exception.IdempotentException;
+import cn.haiyinlong.hspace.idempotent.properties.IdempotentRedisProperties;
+import cn.haiyinlong.hspace.idempotent.service.IdempotentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

@@ -1,4 +1,4 @@
-package cn.haiyinlong.hspace.redis.starter;
+package cn.haiyinlong.hspace.redis;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;

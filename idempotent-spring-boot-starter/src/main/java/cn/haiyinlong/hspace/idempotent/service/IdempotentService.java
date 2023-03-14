@@ -1,6 +1,6 @@
-package cn.haiyinlong.hspace.idempotent.starter.service;
+package cn.haiyinlong.hspace.idempotent.service;
 
-import cn.haiyinlong.hspace.idempotent.starter.properties.IdempotentRedisProperties;
+import cn.haiyinlong.hspace.idempotent.properties.IdempotentRedisProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.StringRedisTemplate;

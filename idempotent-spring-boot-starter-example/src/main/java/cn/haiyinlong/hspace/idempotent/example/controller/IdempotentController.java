@@ -1,7 +1,7 @@
 package cn.haiyinlong.hspace.idempotent.example.controller;
 
-import cn.haiyinlong.hspace.idempotent.starter.annotation.IdempotentVerification;
-import cn.haiyinlong.hspace.idempotent.starter.service.IdempotentService;
+import cn.haiyinlong.hspace.idempotent.annotation.IdempotentVerification;
+import cn.haiyinlong.hspace.idempotent.service.IdempotentService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

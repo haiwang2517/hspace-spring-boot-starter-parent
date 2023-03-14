@@ -1,6 +1,6 @@
-package cn.haiyinlong.hspace.idempotent.starter;
+package cn.haiyinlong.hspace.idempotent;
 
-import cn.haiyinlong.hspace.idempotent.starter.exception.IdempotentException;
+import cn.haiyinlong.hspace.idempotent.exception.IdempotentException;
 
 public interface IdempotentParameterConfig {
   /**

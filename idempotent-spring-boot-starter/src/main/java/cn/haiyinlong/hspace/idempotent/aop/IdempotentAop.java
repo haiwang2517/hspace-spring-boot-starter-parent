@@ -1,8 +1,8 @@
-package cn.haiyinlong.hspace.idempotent.starter.aop;
+package cn.haiyinlong.hspace.idempotent.aop;
 
-import cn.haiyinlong.hspace.idempotent.starter.IdempotentParameterConfig;
-import cn.haiyinlong.hspace.idempotent.starter.exception.IdempotentException;
-import cn.haiyinlong.hspace.idempotent.starter.service.IdempotentService;
+import cn.haiyinlong.hspace.idempotent.IdempotentParameterConfig;
+import cn.haiyinlong.hspace.idempotent.exception.IdempotentException;
+import cn.haiyinlong.hspace.idempotent.service.IdempotentService;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -22,8 +22,7 @@ public class IdempotentAop {
     this.idempotentParameterConfig = idempotentParameterConfig;
   }
 
-  @Pointcut(
-      "@annotation(cn.haiyinlong.hspace.idempotent.starter.annotation.IdempotentVerification)")
+  @Pointcut("@annotation(cn.haiyinlong.hspace.idempotent.annotation.IdempotentVerification)")
   public void point() {}
 
   @Before("point()")

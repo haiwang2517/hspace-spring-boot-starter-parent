@@ -1,4 +1,4 @@
-package cn.haiyinlong.hspace.idempotent.starter.exception;
+package cn.haiyinlong.hspace.idempotent.exception;
 
 public class IdempotentException extends Exception {
   public IdempotentException() {}

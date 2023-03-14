@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  cn.haiyinlong.hspace.idempotent.starter.IdempotentConfiguration
+  cn.haiyinlong.hspace.idempotent.IdempotentConfiguration

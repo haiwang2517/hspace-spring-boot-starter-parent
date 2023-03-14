@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  cn.haiyinlong.hspace.redis.starter.HspaceRedisConfiguration
+  cn.haiyinlong.hspace.redis.HspaceRedisConfiguration

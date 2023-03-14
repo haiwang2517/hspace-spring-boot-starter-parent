@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  cn.haiyinlong.hspace.mysql.starter.HspaceMysqlConfiguration
+  cn.haiyinlong.hspace.mysql.HspaceMysqlConfiguration
