@@ -8,11 +8,11 @@
         <version>2.7.8</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>cn.haiyinlong.hspace</groupId>
-    <artifactId>mysql-spring-boot-starter-example</artifactId>
+    <groupId>cn.haiyinlong.hspace.uid.example</groupId>
+    <artifactId>uid-generator-spring-boot-starter-example</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mysql-spring-boot-starter-example</name>
-    <description>mysql-spring-boot-starter-example</description>
+    <name>uid-generator-spring-boot-starter-example</name>
+    <description>uid-generator-spring-boot-starter-example</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -33,7 +33,7 @@
         </dependency>
         <dependency>
             <groupId>cn.haiyinlong.hspace</groupId>
-            <artifactId>mysql-spring-boot-starter</artifactId>
+            <artifactId>uid-generator-spring-boot-starter</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
@@ -55,6 +55,7 @@
         </plugins>
     </build>
 
+
     <repositories>
         <repository>
             <id>alimaven</id>
@@ -68,5 +69,4 @@
             <url>https://maven.aliyun.com/repository/public</url>
         </pluginRepository>
     </pluginRepositories>
-
 </project>

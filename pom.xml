@@ -22,6 +22,7 @@
         <module>idempotent-spring-boot-starter</module>
         <module>redis-spring-boot-starter</module>
         <module>mysql-spring-boot-starter</module>
+        <module>uid-generator-spring-boot-starter</module>
     </modules>
 
     <properties>
@@ -38,6 +39,8 @@
         <mybatis-plus.version>3.5.2</mybatis-plus.version>
         <mysql.connector.version>8.0.31</mysql.connector.version>
         <dynamic.datasource.version>2.5.7</dynamic.datasource.version>
+        <commons-collections.version>3.2.2</commons-collections.version>
+        <commons-lang.version>2.6</commons-lang.version>
     </properties>
 
     <dependencies>
@@ -45,6 +48,23 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+
+        <!-- Apache Commons -->
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>${commons-collections.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>${commons-lang.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
         <dependency>

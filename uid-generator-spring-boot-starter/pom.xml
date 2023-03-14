@@ -10,9 +10,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>mysql-spring-boot-starter</artifactId>
+    <artifactId>uid-generator-spring-boot-starter</artifactId>
 
-    <name>mysql-spring-boot-starter</name>
+    <name>uid-generator-spring-boot-starter</name>
 
     <dependencies>
         <dependency>
@@ -26,30 +26,14 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- mybatis-plus  -->
+        <!-- mysql数据库依赖  -->
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>${mybatis-plus.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
-            <version>${dynamic.datasource.version}</version>
+            <groupId>cn.haiyinlong.hspace</groupId>
+            <artifactId>mysql-spring-boot-starter</artifactId>
+            <version>${hspace.starter.version}</version>
         </dependency>
 
-        <!-- mysql连接器 -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql.connector.version}</version>
-            <scope>runtime</scope>
-        </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
-        </dependency>
     </dependencies>
 
 </project>

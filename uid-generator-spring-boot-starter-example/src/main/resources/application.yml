@@ -1,0 +1,25 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    dynamic:
+      hikari:
+        connection-timeout: 30000
+        max-lifetime: 1800000
+        max-pool-size: 15
+        min-idle: 5
+        connection-test-query: select 1
+      primary: base
+      datasource:
+        base:
+          username: xxxx
+          password: xxxx
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: xxxxx
+
+mybatis-plus:
+  # ??mapper????
+  #  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    # ??SQL
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
