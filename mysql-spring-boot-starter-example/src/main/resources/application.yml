@@ -12,10 +12,10 @@ spring:
       primary: base
       datasource:
         base:
-          username: root
-          password: xxxx
+          username: XXXX
+          password: XXXX
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: xxxx
+          url: XXXX
 
 mybatis-plus:
   # ??mapper????
