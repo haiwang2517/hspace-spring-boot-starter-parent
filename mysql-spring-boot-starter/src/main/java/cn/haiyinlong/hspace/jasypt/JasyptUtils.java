@@ -21,7 +21,7 @@ public final class JasyptUtils {
    */
   public static String encrypt(String password, String value) {
     PooledPBEStringEncryptor encryptor = new PooledPBEStringEncryptor();
-    SimpleStringPBEConfig config = getConfig(password);
+    SimpleStringPBEConfig config = initConfig(password);
     encryptor.setConfig(config);
     return encryptor.encrypt(value);
   }
@@ -35,20 +35,20 @@ public final class JasyptUtils {
    */
   public static String decrypt(String password, String value) {
     PooledPBEStringEncryptor encryptor = new PooledPBEStringEncryptor();
-    SimpleStringPBEConfig config = getConfig(password);
+    SimpleStringPBEConfig config = initConfig(password);
     encryptor.setConfig(config);
     return encryptor.decrypt(value);
   }
 
-  private static SimpleStringPBEConfig getConfig(String password) {
-    return getConfig(password, "PBEWithMD5AndDES");
+  private static SimpleStringPBEConfig initConfig(String password) {
+    return initConfig(password, "PBEWithMD5AndDES");
   }
 
-  private static SimpleStringPBEConfig getConfig(String password, String algorithm) {
-    return getConfig(password, algorithm, "org.jasypt.iv.NoIvGenerator");
+  private static SimpleStringPBEConfig initConfig(String password, String algorithm) {
+    return initConfig(password, algorithm, "org.jasypt.iv.NoIvGenerator");
   }
 
-  private static SimpleStringPBEConfig getConfig(
+  private static SimpleStringPBEConfig initConfig(
       String password, String algorithm, String ivGeneratorClassName) {
     SimpleStringPBEConfig config = new SimpleStringPBEConfig();
     config.setPassword(password);
