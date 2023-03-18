@@ -127,6 +127,11 @@ public class DocConfiguration {
     return CollectionUtils.newArrayList(new SecurityReference("BearerToken", authorizationScopes));
   }
 
+  /**
+   * 因spingboot启动异常需要添加自定义bean来解决
+   *
+   * @return
+   */
   @Bean
   public WebMvcEndpointHandlerMapping webEndpointServletHandlerMapping(
       WebEndpointsSupplier webEndpointsSupplier,
