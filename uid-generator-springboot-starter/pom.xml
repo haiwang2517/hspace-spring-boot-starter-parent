@@ -29,7 +29,7 @@
         <!-- mysql数据库依赖  -->
         <dependency>
             <groupId>cn.haiyinlong.hspace</groupId>
-            <artifactId>mysql-spring-boot-starter</artifactId>
+            <artifactId>mysql-springboot-starter</artifactId>
             <version>${hspace.starter.version}</version>
         </dependency>
 

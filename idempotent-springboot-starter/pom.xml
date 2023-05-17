@@ -28,7 +28,7 @@
         <!-- redis 依赖 -->
         <dependency>
             <groupId>cn.haiyinlong.hspace</groupId>
-            <artifactId>redis-spring-boot-starter</artifactId>
+            <artifactId>redis-springboot-starter</artifactId>
             <version>${hspace.starter.version}</version>
         </dependency>
 
