@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>spring-boot-starter-parent</artifactId>
+        <artifactId>hspace-springboot-starter-parent</artifactId>
         <groupId>cn.haiyinlong.hspace</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>idempotent-spring-boot-starter</artifactId>
+    <artifactId>uid-generator-springboot-starter</artifactId>
+
+    <name>uid-generator-springboot-starter</name>
 
     <dependencies>
         <dependency>
@@ -24,18 +26,14 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- redis 依赖 -->
+        <!-- mysql数据库依赖  -->
         <dependency>
             <groupId>cn.haiyinlong.hspace</groupId>
-            <artifactId>redis-spring-boot-starter</artifactId>
+            <artifactId>mysql-spring-boot-starter</artifactId>
             <version>${hspace.starter.version}</version>
         </dependency>
 
-        <!-- aop 依赖 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
+
     </dependencies>
 
 </project>

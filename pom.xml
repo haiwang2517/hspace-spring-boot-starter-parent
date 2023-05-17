@@ -3,38 +3,36 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.haiyinlong.hspace</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
+    <artifactId>hspace-springboot-starter-parent</artifactId>
     <packaging>pom</packaging>
     <!-- 1. 当前版本  -->
-    <version>0.0.1-SNAPSHOT</version>
-    <name>hspace-spring-boot-starter-parent</name>
-    <description>hspace-spring-boot-starter-parent</description>
+    <version>0.0.1</version>
+    <name>hspace-springboot-starter-parent</name>
+    <description>hspace-springboot-starter-parent</description>
     <url>https://github.com/haiwang2517</url>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.7.8</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
 
     <modules>
-        <module>idempotent-spring-boot-starter</module>
-        <module>redis-spring-boot-starter</module>
-        <module>mysql-spring-boot-starter</module>
-        <module>uid-generator-spring-boot-starter</module>
-        <module>doc-spring-boot-starter</module>
+        <module>idempotent-springboot-starter</module>
+        <module>redis-springboot-starter</module>
+        <module>mysql-springboot-starter</module>
+        <module>uid-generator-springboot-starter</module>
+        <module>doc-springboot-starter</module>
     </modules>
 
     <properties>
-        <!-- 2. 统一当前依赖版本,子模块使用这个版本  -->
-        <hspace.starter.version>0.0.1-SNAPSHOT</hspace.starter.version>
-        <!-- 系统配置  -->
+        <hspace.starter.version>0.0.1</hspace.starter.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <java.version>1.8</java.version>
-        <!-- 子工程版本 -->
+
         <spring-boot.version>2.7.8</spring-boot.version>
         <redisson.version>3.18.0</redisson.version>
         <mybatis-plus.version>3.5.2</mybatis-plus.version>
@@ -43,7 +41,7 @@
         <commons-collections.version>3.2.2</commons-collections.version>
         <commons-lang.version>2.6</commons-lang.version>
         <jasypt.version>3.0.4</jasypt.version>
-        <!-- doc 版本 -->
+
         <knife4j-openapi2.version>4.0.0</knife4j-openapi2.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
     </properties>
@@ -55,7 +53,6 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- Apache Commons -->
         <dependency>
             <groupId>commons-collections</groupId>
             <artifactId>commons-collections</artifactId>
@@ -94,11 +91,10 @@
     </pluginRepositories>
 
     <distributionManagement>
-        <!-- 制品包提交到github -->
         <repository>
             <id>github</id>
             <name>GitHub haiwang2517 Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/haiwang2517/maven-repo-hspace</url>
+            <url>https://maven.pkg.github.com/haiwang2517/hspace-spring-boot-starter-parent</url>
         </repository>
     </distributionManagement>
 </project>
