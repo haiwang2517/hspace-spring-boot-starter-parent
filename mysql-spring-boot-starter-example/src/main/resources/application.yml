@@ -15,7 +15,7 @@ spring:
           username: XXXX
           password: XXXX
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: XXXX
+          url: xxxxx
 
 mybatis-plus:
   # ??mapper????

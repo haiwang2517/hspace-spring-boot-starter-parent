@@ -5,7 +5,7 @@
     <parent>
         <artifactId>hspace-springboot-starter-parent</artifactId>
         <groupId>cn.haiyinlong.hspace</groupId>
-        <version>0.0.1</version>
+        <version>0.0.2</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -51,12 +51,7 @@
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
 
-        <!-- jasypt 加密解密依赖 -->
-        <dependency>
-            <groupId>com.github.ulisesbocchio</groupId>
-            <artifactId>jasypt-spring-boot-starter</artifactId>
-            <version>${jasypt.version}</version>
-        </dependency>
+
     </dependencies>
 
 </project>

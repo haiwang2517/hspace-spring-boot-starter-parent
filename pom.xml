@@ -5,8 +5,8 @@
     <groupId>cn.haiyinlong.hspace</groupId>
     <artifactId>hspace-springboot-starter-parent</artifactId>
     <packaging>pom</packaging>
-    <!-- 1. 当前版本  -->
-    <version>0.0.1</version>
+
+    <version>0.0.2</version>
     <name>hspace-springboot-starter-parent</name>
     <description>hspace-springboot-starter-parent</description>
     <url>https://github.com/haiwang2517</url>
@@ -27,7 +27,7 @@
     </modules>
 
     <properties>
-        <hspace.starter.version>0.0.1</hspace.starter.version>
+        <hspace.starter.version>0.0.2</hspace.starter.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>

@@ -28,8 +28,8 @@
         </dependency>
         <dependency>
             <groupId>cn.haiyinlong.hspace</groupId>
-            <artifactId>doc-spring-boot-starter</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <artifactId>doc-springboot-starter</artifactId>
+            <version>0.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
