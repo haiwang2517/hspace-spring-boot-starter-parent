@@ -1,0 +1,19 @@
+package ${package}.domain.repository;
+
+import ${package}.domain.${className};
+
+/**
+ * ${comments}资源库
+ *
+ * @author ${author} ${datetime}
+ */
+public interface I${className}Repository {
+
+    void add(${className} ${classname});
+
+    ${className} get(Long id);
+
+    void update(${className} ${classname});
+
+    PageResult<${className}> pageQuery(Integer pageNum, Integer pageRow, Map<String, String> params);
+}

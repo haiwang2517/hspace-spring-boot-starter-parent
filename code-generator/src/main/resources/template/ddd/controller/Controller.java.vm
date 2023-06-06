@@ -1,0 +1,61 @@
+package ${package}.controller;
+
+
+import ${package}.application.${className}Service;
+import ${package}.controller.dto.Modify${className}Dto;
+import ${package}.controller.dto.${className}Dto;
+import ${package}.controller.vo.${className}Vo;
+import ${package}.domain.base.PageResult;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+import java.util.Map;
+/**
+ * ${comments} 管理 API
+ *
+ * @author ${author} ${datetime}
+ */
+@Api(tags = "${comments}api")
+@RestController("${classname}SiteController")
+@RequestMapping("/v1/${classname}")
+@RequiredArgsConstructor
+public class ${className}Controller {
+
+    final ${className}Service ${classname}Service;
+
+    @ApiOperation("${comments}列表")
+    @GetMapping("/{pageNum}/{pageRow}")
+    public PageResult<NotificationVo> pageQuery(
+            @PathVariable("pageNum") Integer pageNum,
+            @PathVariable("pageRow") Integer pageRow,
+            Map<String, Object> params) {
+
+        return ${classname}Service.pageQuery(pageNum, pageRow, params);
+    }
+
+    @ApiOperation("${comments}明细")
+    @GetMapping("/{${pk.attrNameLowerCase}}")
+    public ${className}Vo get${className}(@PathVariable("${pk.attrNameLowerCase}") ${pk.attrType} ${pk.attrNameLowerCase}) {
+        return ${classname}Service.get(${pk.attrNameLowerCase});
+    }
+
+    @ApiOperation("新增消息通知")
+    @PostMapping
+    public void add${className}(@RequestBody ${className}Dto ${classname}Dto) throws Exception {
+        ${classname}Service.add(${classname}Dto);
+    }
+
+    @PutMapping
+    @ApiOperation("修改${comments}")
+    public void modify${className}(@RequestBody Modify${className}Dto modify${className}Dto) {
+        ${classname}Service.modify(modify${className}Dto);
+    }
+
+    @DeleteMapping("/{${pk.attrNameLowerCase}}")
+    @ApiOperation("删除${comments}")
+    public void delete${className}(@PathVariable("${pk.attrNameLowerCase}") ${pk.attrType} ${pk.attrNameLowerCase}) {
+        ${classname}Service.delete(${pk.attrNameLowerCase});
+    }
+
+}

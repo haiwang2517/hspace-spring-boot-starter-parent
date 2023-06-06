@@ -1,0 +1,20 @@
+package ${package}.controller.dto;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiParam;
+import lombok.Data;
+
+
+/**
+ * ${comments}DTO
+ *
+ * @author ${author} ${datetime}
+ */
+@Data
+@ApiModel("修改${comments}DTO")
+public class Modify${className}Dto extends ${className}Dto {
+
+    @ApiParam(value = "$pk.attrNameLowerCase", required = true)
+    private $pk.attrType $pk.attrNameLowerCase;
+}
+

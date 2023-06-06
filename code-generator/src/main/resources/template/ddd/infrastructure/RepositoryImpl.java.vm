@@ -1,0 +1,64 @@
+package ${package}.infrastructure;
+
+import ${package}.domain.${className};
+import ${package}.domain.base.PageResult;
+import ${package}.domain.repository.I${className}Repository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * ${comments} 资源库实现
+ *
+ * @author ${author} ${datetime}
+ */
+@RequiredArgsConstructor
+@Component
+public class ${className}RepositoryImpl implements I${className}Repository {
+
+    final ${className}Dao ${classname}Dao;
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void add(${className} ${classname}) {
+        ${className}Entity ${classname}Entity = ${className}Transform.INSTANCE.toEntity(${classname});
+        ${classname}Dao.insert(${classname}Entity);
+    }
+
+    @Override
+    public ${className} get(Long id) {
+        ${className}Entity ${classname}Entity = ${classname}Dao.selectById(id);
+        return ${className}Transform.INSTANCE.toDomain(${classname}Entity);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void update(${className} ${classname}) {
+        ${className}Entity ${classname}Entity = ${className}Transform.INSTANCE.toEntity(${classname});
+        ${classname}Dao.updateById(${classname}Entity);
+    }
+
+    @Override
+    public PageResult<${className}> pageQuery(Integer pageNum, Integer pageRow, Map<String, Object> params) {
+        QueryWrapper<${className}> queryWrapper = new QueryWrapper<${className}>()
+                .eq("delete_flag", "N")
+                .orderByDesc("create_time");
+        if (!CollectionUtils.isEmpty(params)) {
+            params.forEach(queryWrapper::eq);
+        }
+
+        IPage<${className}> ${classname}EntityIPage =
+                    ${classname}Dao.selectPage(
+                        new Page<>(pageNum, pageRow),
+                        queryWrapper);
+
+        List<${className}> resultList =
+                    ${classname}EntityIPage.getRecords().stream()
+                        .map(${className}Transform.INSTANCE::toDomain)
+                        .collect(Collectors.toList());
+
+        return new PageResult<>(
+                resultList, ${classname}EntityIPage.getPages(), ${classname}EntityIPage.getTotal());
+    }
+
+}

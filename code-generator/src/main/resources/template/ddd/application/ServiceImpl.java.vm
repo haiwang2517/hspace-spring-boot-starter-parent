@@ -1,0 +1,80 @@
+package ${package}.application.impl;
+
+
+import ${package}.controller.dto.Modify${className}Dto;
+import ${package}.controller.dto.${className}Dto;
+import ${package}.controller.vo.${className}Vo;
+import ${package}.domain.${className};
+import ${package}.application.${className}Service;
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.springframework.transaction.annotation.Transactional;
+/**
+ * ${comments}应用服务默认实现
+ *
+ * @author ${author} ${datetime}
+ */
+@Service
+@RequiredArgsConstructor
+public class ${className}ServiceImpl implements ${className}Service {
+
+    final I${className}Repository ${classname}Repository;
+    final ${className}Assemble ${classname}Assemble;
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void add(${className}Dto ${classname}Dto) throws Exception {
+        ${className} ${classname} = new ${className}();
+        ${classname}.create(
+        #foreach ($column in $columns)
+            #if($column.columnName != "id"
+            && $column.columnName != "delete_flag"
+            && $column.columnName != "create_time"
+            && $column.columnName != "update_time"
+            )
+            ${classname}Dto.get$column.attrName() #if($foreach.hasNext) ,#end
+            #end
+        #end
+        );
+        ${classname}Repository.add(${classname});
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void delete(Long id) throws Exception {
+        ${className} ${classname} = ${classname}Repository.get(id);
+        ${classname}.delete();
+        ${classname}Repository.update(${classname});
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void modify(Modify${className}Dto modify${className}Dto) throws Exception {
+        ${className} ${classname} = ${classname}Repository.get(id);
+        ${classname}.modify(
+            #foreach ($column in $columns)
+                #if($column.columnName != "id"
+                && $column.columnName != "delete_flag"
+                && $column.columnName != "create_time"
+                && $column.columnName != "update_time"
+                )
+                ${classname}Dto.get$column.attrName() #if($foreach.hasNext) ,#end
+                #end
+            #end
+        );
+        ${classname}Repository.update(${classname});
+    }
+
+    @Override
+    public ${className}Vo get(Long id) {
+        ${className} ${classname} = ${classname}Repository.get(id);
+        return ${classname}Assemble.assemble${className}Vo(${classname});
+    }
+
+    @Override
+    public PageResult<${className}Vo> pageQuery(Integer pageNum, Integer pageRow, Map<String, Object> params) {
+        PageResult<${className}> pageResult =
+                    ${classname}Repository.pageQuery(pageNum, pageRow, params);
+        return ${classname}Assemble.assemblePage${className}Vo(pageResult);
+    }
+}

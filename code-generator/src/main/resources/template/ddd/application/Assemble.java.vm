@@ -1,0 +1,38 @@
+package ${package}.application;
+
+import${package}.domain.${className};
+import ${package}.controller.vo.${className}Vo;
+import ${package}.domain.base.PageResult;
+
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.stream.Collectors;
+/**
+ * ${comments}组装服务
+ *
+ * @author ${author} ${datetime}
+ */
+@Component
+public interface ${className}Assemble {
+
+    public ${className}Vo assemble${className}Vo(${className} ${classname}) {
+        ${className}Vo ${classname}Vo = new ${className}Vo();
+        #foreach ($column in $columns)
+        ${classname}Vo.set${column.attrName}(${classname}.get${column.attrName}());
+        #end
+        return ${classname}Vo;
+    }
+
+
+    public PageResult<${className}Vo> assemblePage${className}Vo(
+            PageResult<${className}> ${classname}PageResult) {
+        List<NotificationVo> ${classname}Vos =
+                    ${classname}PageResult.getRows().stream()
+                        .map(this::assemble${className}Vo)
+                        .collect(Collectors.toList());
+        return new PageResult<>(${classname}Vos,
+                    ${classname}PageResult.getTotalPageNum(),
+                    ${classname}PageResult.getTotalNumber());
+    }
+}

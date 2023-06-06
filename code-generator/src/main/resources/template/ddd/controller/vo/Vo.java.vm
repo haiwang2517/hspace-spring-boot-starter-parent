@@ -1,0 +1,32 @@
+package ${package}.controller.vo;
+
+#if(${hasBigDecimal})
+import java.math.BigDecimal;
+#end
+#if(${hasDate})
+import java.time.LocalDateTime;
+#end
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiParam;
+import lombok.Data;
+
+
+/**
+ * ${comments}VO
+ *
+ * @author ${author} ${datetime}
+ */
+@Data
+@ApiModel("显示${comments}VO")
+public class ${className}Vo {
+
+#foreach ($column in $columns)
+
+#if($column.columnName != "delete_flag")
+    @ApiParam(value = "$column.comments")
+    private $column.attrType $column.attrNameLowerCase;
+#end
+
+#end
+
+}

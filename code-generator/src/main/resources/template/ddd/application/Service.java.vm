@@ -1,0 +1,26 @@
+package ${package}.application;
+
+
+import ${package}.controller.dto.Modify${className}Dto;
+import ${package}.controller.dto.${className}Dto;
+import ${package}.controller.vo.${className}Vo;
+import ${package}.domain.base.PageResult;
+import java.util.Map;
+/**
+ * ${comments}应用服务
+ *
+ * @author ${author} ${datetime}
+ */
+public interface ${className}Service {
+
+    void add(${className}Dto ${classname}Dto) throws Exception;
+
+    void delete(Long id) throws Exception;
+
+    void modify(Modify${className}Dto modify${className}Dto) throws Exception;
+
+    ${className}Vo get(Long id);
+
+    PageResult<${className}Vo> pageQuery(Integer pageNum, Integer pageRow, Map<String, Object> params);
+
+}

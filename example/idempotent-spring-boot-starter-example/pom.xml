@@ -3,23 +3,29 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.8</version>
+
+        <groupId>cn.haiyinlong.hspace</groupId>
+        <artifactId>hspace-springboot-starter-parent</artifactId>
+        <version>0.0.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>cn.haiyinlong.hspace</groupId>
-    <artifactId>redis-spring-boot-starter-example</artifactId>
+    <artifactId>idempotent-spring-boot-starter-example</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>redis-spring-boot-starter-example</name>
-    <description>redis-spring-boot-starter-example</description>
+    <name>idempotent-spring-boot-starter-example</name>
+    <description>idempotent-spring-boot-starter-example</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>cn.haiyinlong.hspace</groupId>
+            <artifactId>idempotent-springboot-starter</artifactId>
+            <version>0.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.haiyinlong.hspace</groupId>
+            <artifactId>doc-springboot-starter</artifactId>
+            <version>0.0.2</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -31,29 +37,8 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>cn.haiyinlong.hspace</groupId>
-            <artifactId>redis-spring-boot-starter</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <repositories>
         <repository>

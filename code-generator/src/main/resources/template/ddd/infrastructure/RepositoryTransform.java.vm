@@ -1,0 +1,20 @@
+package ${package}.infrastructure;
+
+import ${package}.domain.${className};
+import ${package}.infrastructure.dao.entity.${className}Entity;
+import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
+
+/**
+ * ${comments} 转换对象
+ *
+ * @author ${author} ${datetime}
+ */
+@Mapper
+public interface ${className}Transform {
+    ${className}Transform INSTANCE = Mappers.getMapper(${className}Transform.class);
+
+    ${className}Entity toEntity(${className} ${classname});
+
+    ${className} toDomain(${className}Entity ${classname}Entity);
+}
