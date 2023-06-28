@@ -23,7 +23,8 @@ public class GeneratorController {
   @RequestMapping("/ddd/code")
   public void codeByDDD(HttpServletRequest request, HttpServletResponse response) throws Exception {
     List<String> tables = new ArrayList<>();
-    tables.add("t_notify_template");
+    tables.add("dict");
+    tables.add("dict_item");
     byte[] data = generatorService.generatorCode(tables);
     String date = GenUtils.format(new Date(), "yyyy-MM-dd HH:mm:ss");
     response.reset();

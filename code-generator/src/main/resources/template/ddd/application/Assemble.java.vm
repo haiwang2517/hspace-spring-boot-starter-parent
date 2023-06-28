@@ -1,6 +1,6 @@
 package ${package}.application;
 
-import${package}.domain.${className};
+import ${package}.domain.${className};
 import ${package}.controller.vo.${className}Vo;
 import ${package}.domain.base.PageResult;
 
@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
  * @author ${author} ${datetime}
  */
 @Component
-public interface ${className}Assemble {
+public class ${className}Assemble {
 
     public ${className}Vo assemble${className}Vo(${className} ${classname}) {
         ${className}Vo ${classname}Vo = new ${className}Vo();
@@ -27,7 +27,7 @@ public interface ${className}Assemble {
 
     public PageResult<${className}Vo> assemblePage${className}Vo(
             PageResult<${className}> ${classname}PageResult) {
-        List<NotificationVo> ${classname}Vos =
+        List<${className}Vo> ${classname}Vos =
                     ${classname}PageResult.getRows().stream()
                         .map(this::assemble${className}Vo)
                         .collect(Collectors.toList());

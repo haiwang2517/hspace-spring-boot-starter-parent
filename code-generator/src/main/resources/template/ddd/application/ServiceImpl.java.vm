@@ -5,8 +5,10 @@ import ${package}.controller.dto.Modify${className}Dto;
 import ${package}.controller.dto.${className}Dto;
 import ${package}.controller.vo.${className}Vo;
 import ${package}.domain.${className};
+import ${package}.domain.repository.I${className}Repository;
 import ${package}.application.${className}Service;
 import org.springframework.stereotype.Service;
+import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 /**
@@ -32,7 +34,7 @@ public class ${className}ServiceImpl implements ${className}Service {
             && $column.columnName != "create_time"
             && $column.columnName != "update_time"
             )
-            ${classname}Dto.get$column.attrName() #if($foreach.hasNext) ,#end
+            ${classname}Dto.get${column.attrName}() #if($foreach.hasNext) ,#end
             #end
         #end
         );
@@ -41,8 +43,8 @@ public class ${className}ServiceImpl implements ${className}Service {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void delete(Long id) throws Exception {
-        ${className} ${classname} = ${classname}Repository.get(id);
+    public void delete(${pk.attrType} ${pk.attrNameLowerCase}) throws Exception {
+        ${className} ${classname} = ${classname}Repository.get(${pk.attrNameLowerCase});
         ${classname}.delete();
         ${classname}Repository.update(${classname});
     }
@@ -50,7 +52,7 @@ public class ${className}ServiceImpl implements ${className}Service {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void modify(Modify${className}Dto modify${className}Dto) throws Exception {
-        ${className} ${classname} = ${classname}Repository.get(id);
+        ${className} ${classname} = ${classname}Repository.get(modify${className}Dto.get${pk.attrName}());
         ${classname}.modify(
             #foreach ($column in $columns)
                 #if($column.columnName != "id"
@@ -58,7 +60,7 @@ public class ${className}ServiceImpl implements ${className}Service {
                 && $column.columnName != "create_time"
                 && $column.columnName != "update_time"
                 )
-                ${classname}Dto.get$column.attrName() #if($foreach.hasNext) ,#end
+                modify${className}Dto.get${column.attrName}() #if($foreach.hasNext) ,#end
                 #end
             #end
         );
@@ -66,8 +68,8 @@ public class ${className}ServiceImpl implements ${className}Service {
     }
 
     @Override
-    public ${className}Vo get(Long id) {
-        ${className} ${classname} = ${classname}Repository.get(id);
+    public ${className}Vo get(${pk.attrType} ${pk.attrNameLowerCase}) {
+        ${className} ${classname} = ${classname}Repository.get(${pk.attrNameLowerCase});
         return ${classname}Assemble.assemble${className}Vo(${classname});
     }
 

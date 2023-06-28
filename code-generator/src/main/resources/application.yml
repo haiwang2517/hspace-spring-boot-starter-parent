@@ -12,10 +12,10 @@ spring:
       primary: base
       datasource:
         base:
-          username: xxx
-          password: xxxx
+          username: root
+          password: ScudP@wer
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: xxxxxx
+          url: jdbc:mysql://nj-cdb-jq7pe3t9.sql.tencentcdb.com:63864/scud_isp?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
 
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml

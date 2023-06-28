@@ -34,13 +34,22 @@ public class ${className} {
     "delete_flag" && $column.columnName != "create_time" && $column.columnName != "update_time")
     $column.attrType $column.attrNameLowerCase #if($foreach.hasNext) ,#end #end #end){
     #foreach ($column in $columns)
-        #if($column.columnName != "id")
+        #if($column.columnName != "id"
+            && $column.columnName != "delete_flag"
+            && $column.columnName != "create_time"
+            && $column.columnName != "update_time" )
         this.$column.attrNameLowerCase = $column.attrNameLowerCase;
         #end
+        #if($column.columnName == "delete_flag")
+        this.$column.attrNameLowerCase = "N";
+        #end
+        #if($column.columnName == "create_time")
+        this.$column.attrNameLowerCase = LocalDateTime.now();
+        #end
+        #if($column.columnName == "update_time" )
+        this.$column.attrNameLowerCase = LocalDateTime.now();
+        #end
     #end
-        this.deleteFlag = "N";
-        this.createTime = LocalDateTime.now();
-        this.updateTime = LocalDateTime.now();
     }
 
     /**
@@ -50,15 +59,27 @@ public class ${className} {
     "delete_flag" && $column.columnName != "create_time" && $column.columnName != "update_time")
     $column.attrType $column.attrNameLowerCase #if($foreach.hasNext) ,#end #end #end){
     #foreach ($column in $columns)
-    #if($column.columnName != "id")
+    #if($column.columnName != "id"
+        && $column.columnName != "delete_flag"
+        && $column.columnName != "create_time"
+        && $column.columnName != "update_time" )
         this.$column.attrNameLowerCase = $column.attrNameLowerCase;
     #end
+    #if($column.columnName == "update_time" )
+        this.$column.attrNameLowerCase = LocalDateTime.now();
     #end
-        this.updateTime = LocalDateTime.now();
+    #end
+
     }
 
     public void delete() {
-        this.deleteFlag = "Y";
-        this.updateTime = LocalDateTime.now();
+    #foreach ($column in $columns)
+        #if($column.columnName == "delete_flag" )
+        this.$column.attrNameLowerCase ="Y";
+        #end
+        #if($column.columnName == "update_time" )
+        this.$column.attrNameLowerCase = LocalDateTime.now();
+        #end
+    #end
     }
 }

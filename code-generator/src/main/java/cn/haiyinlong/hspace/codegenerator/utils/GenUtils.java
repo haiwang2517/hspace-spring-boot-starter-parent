@@ -184,9 +184,7 @@ public class GenUtils {
           + File.separator
           + className
           + ".java";
-    }
-
-    if (template.contains("ddd/domain/Repository.java.vm")) {
+    }else  if (template.contains("ddd/domain/Repository.java.vm")) {
       return javaPackagePath
           + "domain"
           + File.separator
@@ -195,25 +193,19 @@ public class GenUtils {
           + "I"
           + className
           + "Repository.java";
-    }
-
-    if (template.contains("ddd/infrastructure/RepositoryImpl.java.vm")) {
+    }else if (template.contains("ddd/infrastructure/RepositoryImpl.java.vm")) {
       return javaPackagePath
               + "infrastructure"
               + File.separator
               + className
-              + "Repository.java";
-    }
-
-    if (template.contains("ddd/infrastructure/RepositoryTransform.java.vm")) {
+              + "RepositoryImpl.java";
+    }else if (template.contains("ddd/infrastructure/RepositoryTransform.java.vm")) {
       return javaPackagePath
               + "infrastructure"
               + File.separator
               + className
               + "Transform.java";
-    }
-
-    if (template.contains("ddd/infrastructure/Dao.java.vm")) {
+    }else if (template.contains("ddd/infrastructure/Dao.java.vm")) {
       return javaPackagePath
           + "infrastructure"
           + File.separator
@@ -221,9 +213,7 @@ public class GenUtils {
           + File.separator
           + className
           + "Dao.java";
-    }
-
-    if (template.contains("ddd/infrastructure/Entity.java.vm")) {
+    }else if (template.contains("ddd/infrastructure/Entity.java.vm")) {
       return javaPackagePath
           + "infrastructure"
           + File.separator
@@ -233,48 +223,34 @@ public class GenUtils {
           + File.separator
           + className
           + "Entity.java";
-    }
-    if (template.contains("Mapper.xml.vm")) {
+    }else if (template.contains("Mapper.xml.vm")) {
       return resourcePackagePath + "mapper" + File.separator + className + "Mapper.xml";
-    }
-
-
-
-    /////////////// application
-    if (template.contains("ddd/application/Assemble.java.vm")) {
+    } else  if (template.contains("ddd/application/Assemble.java.vm")) {
+      /////////////// application
       return javaPackagePath
           + "application"
           + File.separator
           + className
           + "Assemble.java";
-    }
-
-    if (template.contains("ddd/application/Service.java.vm")) {
+    } else  if (template.contains("ddd/application/Service.java.vm")) {
       return javaPackagePath
               + "application"
               + File.separator
               + className
               + "Service.java";
-    }
-
-    if (template.contains("ddd/application/ServiceImpl.java.vm")) {
+    } else  if (template.contains("ddd/application/ServiceImpl.java.vm")) {
       return javaPackagePath
               + "application"
               + File.separator
               + className
               + "ServiceImpl.java";
-    }
-
-    /////////////// controller
-    if (template.contains("ddd/controller/Controller.java.vm")) {
+    } else  if (template.contains("ddd/controller/Controller.java.vm")) {
       return javaPackagePath
               + "controller"
               + File.separator
               + className
               + "Controller.java";
-    }
-
-    if (template.contains("ddd/controller/dto/Dto.java.vm")) {
+    } else  if (template.contains("ddd/controller/dto/Dto.java.vm")) {
       return javaPackagePath
               + "controller"
               + File.separator
@@ -282,9 +258,7 @@ public class GenUtils {
               + File.separator
               + className
               + "Dto.java";
-    }
-
-    if (template.contains("ddd/controller/dto/ModifyDto.java.vm")) {
+    } else  if (template.contains("ddd/controller/dto/ModifyDto.java.vm")) {
       return javaPackagePath
               + "controller"
               + File.separator
@@ -293,9 +267,7 @@ public class GenUtils {
               + "Modify"
               + className
               + "Dto.java";
-    }
-
-    if (template.contains("ddd/controller/vo/Vo.java.vm")) {
+    } else  if (template.contains("ddd/controller/vo/Vo.java.vm")) {
       return javaPackagePath
               + "controller"
               + File.separator
@@ -304,7 +276,6 @@ public class GenUtils {
               + className
               + "Vo.java";
     }
-
 
     return null;
   }

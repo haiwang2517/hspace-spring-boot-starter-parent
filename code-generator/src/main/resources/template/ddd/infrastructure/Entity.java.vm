@@ -22,8 +22,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(value = "${tableName}")
-public class ${className} implements Serializable {
+@TableName(value = "${tableName}")
+public class ${className}Entity implements Serializable {
 
 #foreach ($column in $columns)
 

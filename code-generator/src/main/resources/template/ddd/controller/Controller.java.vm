@@ -26,7 +26,7 @@ public class ${className}Controller {
 
     @ApiOperation("${comments}列表")
     @GetMapping("/{pageNum}/{pageRow}")
-    public PageResult<NotificationVo> pageQuery(
+    public PageResult<${className}Vo> pageQuery(
             @PathVariable("pageNum") Integer pageNum,
             @PathVariable("pageRow") Integer pageRow,
             Map<String, Object> params) {
@@ -40,7 +40,7 @@ public class ${className}Controller {
         return ${classname}Service.get(${pk.attrNameLowerCase});
     }
 
-    @ApiOperation("新增消息通知")
+    @ApiOperation("新增${comments}")
     @PostMapping
     public void add${className}(@RequestBody ${className}Dto ${classname}Dto) throws Exception {
         ${classname}Service.add(${classname}Dto);
@@ -48,13 +48,14 @@ public class ${className}Controller {
 
     @PutMapping
     @ApiOperation("修改${comments}")
-    public void modify${className}(@RequestBody Modify${className}Dto modify${className}Dto) {
+    public void modify${className}(@RequestBody Modify${className}Dto modify${className}Dto)  throws Exception {
         ${classname}Service.modify(modify${className}Dto);
     }
 
     @DeleteMapping("/{${pk.attrNameLowerCase}}")
     @ApiOperation("删除${comments}")
-    public void delete${className}(@PathVariable("${pk.attrNameLowerCase}") ${pk.attrType} ${pk.attrNameLowerCase}) {
+    public void delete${className}(@PathVariable("${pk.attrNameLowerCase}") ${pk.attrType} ${pk.attrNameLowerCase})
+            throws Exception {
         ${classname}Service.delete(${pk.attrNameLowerCase});
     }
 

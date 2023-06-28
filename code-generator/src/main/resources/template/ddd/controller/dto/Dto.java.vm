@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 #end
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 
@@ -24,8 +24,10 @@ public class ${className}Dto {
 
 #if($column.columnName != "id"
 && $column.columnName != "delete_flag"
+&& $column.columnName != "create_time"
+&& $column.columnName != "update_time"
 )
-    @ApiParam(value = "$column.comments")
+    @ApiModelProperty(value = "$column.comments")
     private $column.attrType $column.attrNameLowerCase;
 #end
 
