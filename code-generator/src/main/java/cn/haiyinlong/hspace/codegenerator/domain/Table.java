@@ -3,7 +3,6 @@ package cn.haiyinlong.hspace.codegenerator.domain;
 import lombok.Data;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Data
 public class Table {
